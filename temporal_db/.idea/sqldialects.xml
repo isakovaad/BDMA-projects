@@ -3,5 +3,9 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/create_tables.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/insert_into.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Downloads/sql-2/createtable.sql" dialect="TSQL" />
+    <file url="file://$USER_HOME$/Downloads/sql-2/dbload.sql" dialect="TSQL" />
+    <file url="file://$USER_HOME$/Downloads/sql/createDB.sql" dialect="TSQL" />
+    <file url="file://$USER_HOME$/Downloads/sql/loadDB.sql" dialect="TSQL" />
   </component>
 </project>
