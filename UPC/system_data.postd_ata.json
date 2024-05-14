@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd0b"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Garth Carver",
+  "gender": "female",
+  "content": "I want to travel to Barcelona and I'm looking for a companion with similar interests to travel together.",
+  "latlng": "41.3851, 2.1734"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd0c"
+  },
+  "type": "sports",
+  "title": "Find a Sports Buddy",
+  "name": "Daniel Best",
+  "gender": "female",
+  "content": "I'm looking for someone to do sports together.",
+  "latlng": "41.3902, 2.1540"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd0d"
+  },
+  "type": "restaurant",
+  "title": "Find a Restaurant Buddy",
+  "name": "Tarik Gallegos",
+  "gender": "female",
+  "content": "I'm looking for someone to taste food together.",
+  "latlng": "41.3918, 2.1649"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd0e"
+  },
+  "type": "sports",
+  "title": "Find a Sports Buddy",
+  "name": "Harding Austin",
+  "gender": "male",
+  "content": "I'm hoping to find someone to do sports together.",
+  "latlng": "41.3842, 2.1763"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd0f"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Kevin Henderson",
+  "gender": "female",
+  "content": "I want to travel and I'm looking for someone willing to travel with me.",
+  "latlng": "41.3925, 2.1700"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd10"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Christine Webb",
+  "gender": "male",
+  "content": "I want to travel and I'm looking for someone willing to travel with me.",
+  "latlng": "41.3838, 2.1775"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd11"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Chester Carlson",
+  "gender": "female",
+  "content": "I want to travel and I'm looking for someone willing to travel with me.",
+  "latlng": "41.3902, 2.1540"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd12"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Knox Hoffman",
+  "gender": "female",
+  "content": "I'm planning to travel and I'm looking for a companion to travel together.",
+  "latlng": "41.4036, 2.1674"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd13"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Aimee Ross",
+  "gender": "male",
+  "content": "I'm planning to travel and I'm looking for a companion to travel together.",
+  "latlng": "41.3879, 2.1699"
+},
+{
+  "_id": {
+    "$oid": "65f1d74032536e1ffd51dd14"
+  },
+  "type": "travel",
+  "title": "Find a Travel Buddy",
+  "name": "Sybill Townsend",
+  "gender": "female",
+  "content": "I'm planning to travel and I'm looking for a companion to travel together.",
+  "latlng": "41.3851, 2.1734"
+}]

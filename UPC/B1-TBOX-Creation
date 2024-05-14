@@ -1,0 +1,70 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "87a70f1a-de2d-459f-9afc-c9b605d41a7f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting rdflib\n",
+      "  Downloading rdflib-7.0.0-py3-none-any.whl (531 kB)\n",
+      "\u001b[K     |████████████████████████████████| 531 kB 3.2 MB/s eta 0:00:01\n",
+      "\u001b[?25hCollecting isodate<0.7.0,>=0.6.0\n",
+      "  Downloading isodate-0.6.1-py2.py3-none-any.whl (41 kB)\n",
+      "\u001b[K     |████████████████████████████████| 41 kB 2.4 MB/s eta 0:00:01\n",
+      "\u001b[?25hRequirement already satisfied: pyparsing<4,>=2.1.0 in /opt/anaconda3/lib/python3.8/site-packages (from rdflib) (2.4.7)\n",
+      "Requirement already satisfied: six in /opt/anaconda3/lib/python3.8/site-packages (from isodate<0.7.0,>=0.6.0->rdflib) (1.16.0)\n",
+      "Installing collected packages: isodate, rdflib\n",
+      "Successfully installed isodate-0.6.1 rdflib-7.0.0\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install rdflib"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "162b9e95-889c-4a5c-b215-331ba5119a1e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from rdflib import Graph, Literal, RDF, RDFS, Namespace, URIRef\n",
+    "\n",
+    "# Create an RDF graph\n",
+    "g = Graph()\n",
+    "\n",
+    "# Define your namespace\n",
+    "EX = Namespace(\"http://example.org/schema/\")\n",
+    "g.bind(\"ex\", EX)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
