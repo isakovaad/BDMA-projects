@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crime in France</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="stylesheet" href="crime.css">
+</head>
+<body>
+  <header>
+    <h1>Crime in France</h1>
+    <p>Search for a city to see crime statistics</p>    
+  </header>
+  
+
+  <main>
+    <div class="input-container">
+      <input id="city-input" type="text" placeholder="Type a city name..." />
+      <select id="year-dropdown">
+        <option value="">Select Year</option>
+      </select>
+    </div>
+    
+  
+    <!-- SVG Map -->
+    <div id="map-container">
+      <svg id="crime-map" width="800" height="600"></svg>
+    </div>
+  </main>  
+
+  <footer>
+    <p>© 2024-2025 Crime Data Visualization by CentraleSupeléc students Dilbar Isakova</p>
+  </footer>
+
+  <script src="crime.js"></script>
+</body>
+</html>

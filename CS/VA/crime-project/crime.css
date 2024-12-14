@@ -1,0 +1,104 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f9;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #002855;
+    color: white;
+    padding: 20px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+  }
+  
+  /* Main content styling */
+  .search-container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  #city-input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #city-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ddd;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    background: white;
+    z-index: 10;
+  }
+  
+  #city-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #city-list li:hover {
+    background-color: #f0f0f0;
+  }
+
+  #map-container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    position: relative;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+
+  #year-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 120px;
+    margin-left: 10px;
+  }  
+  
+  #crime-map {
+    display: block;
+    margin: 0 auto;
+  }  
+  
+  /* Footer styling */
+  footer {
+    background-color: #002855;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
