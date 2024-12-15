@@ -63,8 +63,8 @@ body {
 
   #map-container {
     margin: 20px auto;
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1000px;
     border: 1px solid #ddd;
     background: #f9f9f9;
     position: relative;
