@@ -1,0 +1,23 @@
+Exam 2024-2025 
+Active Databases:
+
+1.  A room cannot have two reservations for the same day.
+
+CREATE TRIGGER trg_CheckRoomAvailability
+ON RoomReservation
+FOR INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM RoomReservation r
+        JOIN inserted i ON r.HotelID = i.HotelID 
+                      AND r.RoomID = i.RoomID
+                      AND i.FromDate < r.ToDate 
+                      AND i.ToDate > r.FromDate
+    )
+    BEGIN
+        RAISERROR ('A room cannot have two reservations for the same day.', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+END;
