@@ -21,3 +21,29 @@ BEGIN
         ROLLBACK TRANSACTION;
     END
 END;
+
+
+
+
+
+2.
+
+
+CREATE TRIGGER trg_ValidateHotelOpen
+ON RoomReservation
+FOR INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM RoomReservation r
+        JOIN inserted i ON r.HotelID = i.HotelID
+        JOIN Hotel h ON h.HotelID = i.HotelID
+        WHERE i.FromDate < h.FromDate 
+           OR (h.ToDate IS NOT NULL AND i.ToDate > h.ToDate)
+    )
+    BEGIN
+        RAISERROR ('The reservation must be made when the hotel is in operation.', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+END;
