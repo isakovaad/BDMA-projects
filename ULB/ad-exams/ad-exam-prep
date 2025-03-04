@@ -3,6 +3,11 @@ Active Databases:
 
 1.  A room cannot have two reservations for the same day.
 
+To enforce this constraint, we create a BEFORE INSERT trigger that checks for overlapping reservations.
+
+✅ Solution: Using a Trigger
+------------------------------------------
+
 CREATE TRIGGER trg_CheckRoomAvailability
 ON RoomReservation
 FOR INSERT
@@ -22,12 +27,17 @@ BEGIN
     END
 END;
 
+------------------------------------------
 
 
 
 
-2.
+2. The reservations of a room must be done when the hotel is in operation
+Each hotel has a FromDate (opening date) and ToDate (closing date). We ensure that a reservation falls within this period.
 
+✅ Solution: Using a Trigger
+
+------------------------------------------------------------------------------------
 
 CREATE TRIGGER trg_ValidateHotelOpen
 ON RoomReservation
@@ -47,3 +57,61 @@ BEGIN
         ROLLBACK TRANSACTION;
     END
 END;
+
+
+------------------------------------------------------------------------------------
+
+
+
+3. Define a derived attribute TotalPrice that computes the price of a RoomReservation
+
+The TotalPrice is calculated as:
+
+TotalPrice = (PricePerNight)×(Number of Nights)
+TotalPrice=(PricePerNight)×(Number of Nights)
+
+
+✅ Solution: Using a Computed Column
+
+---------------------------------------------------------------------
+
+ALTER TABLE RoomReservation 
+ADD TotalPrice AS (
+    (SELECT PricePerNight 
+     FROM HotelRoomPrice p 
+     WHERE p.HotelID = RoomReservation.HotelID 
+       AND p.RoomID = RoomReservation.RoomID 
+       AND RoomReservation.FromDate >= p.FromDate 
+       AND (RoomReservation.ToDate <= p.ToDate OR p.ToDate IS NULL)
+    ) * DATEDIFF(DAY, FromDate, ToDate)
+) PERSISTED;
+
+----------------------------------------------------------------------
+
+
+- Uses HotelRoomPrice to find the correct room price.
+- Computes the number of nights using DATEDIFF(DAY, FromDate, ToDate).
+- PERSISTED ensures the value is stored in the database for faster queries.
+
+
+
+
+4. Define a derived attribute NoPOIs that counts the number of POIs visited by a Tourist Circuit
+Each TouristCircuit covers multiple Points of Interest (POIs), and we need to count them.
+
+✅ Solution: Using a Computed Column
+
+------------------------------------------
+
+ALTER TABLE TouristCircuit
+ADD NoPOIs AS (
+    (SELECT COUNT(*) 
+     FROM PointOfInterest p 
+     WHERE p.CityID = TouristCircuit.CityID)
+) PERSISTED;
+
+------------------------------------------
+
+
+- Counts the number of POIs (COUNT(*)) in the same city as the tourist circuit.
+- The PERSISTED option stores this value for efficiency.
