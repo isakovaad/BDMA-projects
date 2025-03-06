@@ -27,8 +27,53 @@ BEGIN
     END
 END;
 
+
+
 ------------------------------------------
 
+
+CREATE TRIGGER trg_CheckRoomAvailability → Defines a new trigger named trg_CheckRoomAvailability.
+ON RoomReservation → This trigger is associated with the RoomReservation table.
+FOR INSERT → The trigger fires after an INSERT operation (i.e., when a new reservation is being added).
+
+
+AS → Specifies the body of the trigger.
+BEGIN → Marks the start of the trigger logic.
+
+
+IF EXISTS (...) → Checks if there is an overlapping reservation.
+SELECT 1 → A simple way to check for conflicts (returns 1 if a conflict exists).
+FROM RoomReservation r → Alias r represents existing reservations.
+JOIN inserted i → inserted is a special table in SQL Server that stores the new row(s) being inserted.
+ON r.HotelID = i.HotelID AND r.RoomID = i.RoomID → Ensures we are checking reservations for the same hotel and same room.
+AND i.FromDate < r.ToDate AND i.ToDate > r.FromDate → Checks for date overlap:
+i.FromDate < r.ToDate → The new reservation starts before an existing reservation ends.
+i.ToDate > r.FromDate → The new reservation ends after an existing reservation starts.
+These two conditions ensure that even partial overlaps are caught.
+
+
+BEGIN ... END → Executes the error handling block only if a conflict is found.
+RAISERROR ('A room cannot have two reservations for the same day.', 16, 1);
+RAISERROR generates a custom error message.
+'A room cannot have two reservations for the same day.' → Error message displayed to the user.
+16 → Error severity level (16 = user-defined error).
+1 → State number (used to track errors internally).
+ROLLBACK TRANSACTION; → Cancels the insertion if a conflict is detected, preventing double booking.
+
+
+Marks the end of the trigger logic.
+
+
+Final Explanation:
+This trigger ensures no two reservations overlap for the same hotel room. Whenever a new reservation is added:
+
+It checks for conflicts by joining the RoomReservation table with the inserted table.
+If an overlap is found, it raises an error and cancels the transaction.
+If no conflicts exist, the new reservation is successfully inserted.
+This approach maintains data integrity and ensures rooms are not double-booked. 🚀
+
+
+------------------------------------------
 
 
 
