@@ -160,3 +160,37 @@ ADD NoPOIs AS (
 
 - Counts the number of POIs (COUNT(*)) in the same city as the tourist circuit.
 - The PERSISTED option stores this value for efficiency.
+
+
+
+
+
+
+
+
+Spatial Databases:
+
+1. For each city, give the currently most expensive hotel in its historical center.
+💡 Explanation:
+"Currently" means checking the price where ToDate IS NULL in HotelRoomPrice.
+"Most expensive" is based on the maximum room price.
+The hotel must be inside the historic center (ST_Within).
+
+
+-------------------------------------------------------------------------------------------------
+
+SELECT c.CityID, c.Name AS CityName, h.HotelID, h.HotelName, MAX(p.PricePerNight) AS MaxPrice
+FROM City c
+JOIN Hotel h ON h.CityID = c.CityID
+JOIN HotelRoom hr ON hr.HotelID = h.HotelID
+JOIN HotelRoomPrice p ON p.HotelID = hr.HotelID AND p.RoomID = hr.RoomID
+WHERE ST_Within(h.HotelGeo, c.HistoricCenterGeo)
+  AND p.ToDate IS NULL
+GROUP BY c.CityID, c.Name, h.HotelID, h.HotelName;
+
+-------------------------------------------------------------------------------------------------
+
+
+2.
+3.
+4.
