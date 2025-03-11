@@ -194,4 +194,3 @@ Explanation Line by Line
 -------------------------------------------------------------------------------------------------
 SELECT c.CityID, c.Name AS CityName, h.HotelID, h.HotelName, MAX(p.PricePerNight) AS MaxPrice
 FROM City c
--->
