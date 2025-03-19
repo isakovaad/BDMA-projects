@@ -202,3 +202,4 @@ FROM City c
 JOIN Hotel h ON h.CityID = c.CityID
 
 
+2.
