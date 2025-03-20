@@ -203,3 +203,27 @@ JOIN Hotel h ON h.CityID = c.CityID
 
 
 2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Temporal Databases:
+
+For the following questions provide queries, suppose you are using a PostgreSQL database (No extensions apart
+from PostGIS were added!)
+
+1. For each hotel, give the history of the number of unused rooms.
+2. For each hotel room, give the time intervals when the number of people was less than the
+maximum.
+3. For each hotel compute their total revenues in 2024. Suppose that the price of a reservation
+is computed at check-out based on the price per night at that time.
+4. For each hotel give the last room booked as well as its total cost to the client.
