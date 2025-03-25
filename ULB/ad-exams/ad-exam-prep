@@ -43,6 +43,8 @@ ON RoomReservation → This trigger is associated with the RoomReservation table
 FOR INSERT → The trigger fires after an INSERT operation (i.e., when a new reservation is being added).
 
 
+
+
 AS → Specifies the body of the trigger.
 BEGIN → Marks the start of the trigger logic.
 
