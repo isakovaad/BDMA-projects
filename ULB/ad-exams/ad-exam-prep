@@ -214,10 +214,6 @@ JOIN Hotel h ON h.CityID = c.CityID
 
 
 
-
-
-
-
 Temporal Databases:
 
 For the following questions provide queries, suppose you are using a PostgreSQL database (No extensions apart
