@@ -1,6 +1,7 @@
 Exam 2024-2025 
 Active Databases:
 
+
 1.  A room cannot have two reservations for the same day.
 
 To enforce this constraint, we create a BEFORE INSERT trigger that checks for overlapping reservations.
