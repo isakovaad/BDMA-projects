@@ -1,7 +1,6 @@
 Exam 2024-2025 
 Active Databases:
 
-
 1.  A room cannot have two reservations for the same day.
 
 To enforce this constraint, we create a BEFORE INSERT trigger that checks for overlapping reservations.
@@ -226,6 +225,9 @@ maximum.
 3. For each hotel compute their total revenues in 2024. Suppose that the price of a reservation
 is computed at check-out based on the price per night at that time.
 4. For each hotel give the last room booked as well as its total cost to the client.
+
+
+
 
 
 
