@@ -1,1 +1,14 @@
+“Learning to Visualize: Machine Learning-Driven Adaptation and Perceptual Evaluation of Non-Planar Public Data Displays”
+
+As interactive public displays become more embedded in our environments, their effectiveness depends not just on the technology, but also on how people perceive and interact with them — especially when moving beyond traditional flat screens to non-planar, ambient, and spatially embedded surfaces. To advance this, I propose to integrate machine learning into both the design and evaluation phases of the project.
+
+This would allow us to:
+
+→ Learn from user interaction and perceptual feedback to optimize visualization layouts on curved or flexible surfaces.
+
+→ Create adaptive systems that dynamically choose what content to display based on context and user engagement.
+
+→ Use behavioral data to train models that classify or predict user needs or preferences in public settings.
+
+→ Explore how ML can augment tangible visualizations, making them responsive and intelligent over time.
 
